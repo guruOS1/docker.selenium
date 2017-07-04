@@ -14,6 +14,9 @@ RUN wget -v -O geckodriver.tar.gz "$GeckodriverDownloadURL" \
     && rm -f geckodriver.tar.gz
 ENV PATH /work:$PATH
 
+WORKDIR test
+COPY ./test/test_google.py test_google.py
+
 COPY ./runtest.sh /work/
 ENTRYPOINT ["/work/runtest.sh"]
-CMD ["RunIt"]
+CMD ["WithoutParameters"]
