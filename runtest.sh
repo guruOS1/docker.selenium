@@ -1,8 +1,12 @@
 #!/bin/bash
 set -e
 
-if [ "$1" = 'RunIt' ]; then
-    exec "/usr/bin/xvfb-run python test/test_google.py"
+DisplayNum=99
+
+if [ "$1" = 'WithoutParameters' ]; then
+    Xvfb :${DisplayNum} &
+    export DISPLAY=:${DisplayNum}
+    exec /usr/bin/python /work/test/test_google.py
 else
     exec "$@"
 fi
