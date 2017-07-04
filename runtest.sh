@@ -2,9 +2,7 @@
 set -e
 
 if [ "$1" = 'RunIt' ]; then
-    exec "/bin/echo $1"
+    exec "/usr/bin/xvfb-run python test/test_google.py"
 else
     exec "$@"
 fi
-
-
