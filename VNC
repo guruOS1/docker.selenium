@@ -1,0 +1,7 @@
+#!/bin/bash
+
+DisplayNum=0
+export DISPLAY=:${DisplayNum}
+Xvfb ${DISPLAY} -screen 0 1024x768x16 &
+fluxbox &
+x11vnc -display ${DISPLAY} -forever -xkb

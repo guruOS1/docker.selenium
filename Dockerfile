@@ -4,7 +4,7 @@ LABEL Description="This image is used to start the python unit test suite" Vendo
 RUN apt-get update && apt-get install -y xvfb python-pip wget tar firefox-esr x11vnc fluxbox && apt-get clean
 
 WORKDIR /work
-
+COPY ./VNC /work/
 COPY ./requirements.txt /work/
 RUN pip install --requirement requirements.txt
 
