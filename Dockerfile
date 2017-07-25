@@ -1,7 +1,7 @@
 FROM debian:latest
 LABEL Description="This image is used to start the python unit test suite" Vendor="VEGA" Version="1.0"
 
-RUN apt-get update && apt-get install -y xvfb python-pip wget tar firefox-esr x11vnc && apt-get clean
+RUN apt-get update && apt-get install -y xvfb python-pip wget tar firefox-esr x11vnc fluxbox && apt-get clean
 
 WORKDIR /work
 
